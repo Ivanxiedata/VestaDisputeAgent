@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/customLLM.iml" filepath="$PROJECT_DIR$/.idea/customLLM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/VestaDisputeAgent.iml" filepath="$PROJECT_DIR$/.idea/VestaDisputeAgent.iml" />
     </modules>
   </component>
 </project>
