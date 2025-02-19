@@ -1,7 +1,7 @@
 import subprocess
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from css.landing_page_styling import landing_page_style
+from css.pages_styling import landing_page_style, smart_contract_page_style, dispute_page_style
 app = FastAPI()
 
 # Global dictionary to track running agent processes.
@@ -25,37 +25,13 @@ async def home():
 async def smart_contract():
     # Launch the smart contract agent on port 8002.
     start_agent("smart_contract", "agents/smart_contract_agent.py", "8002")
-    return """
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Smart Contract Agent Started</title>
-      </head>
-      <body>
-        <p>Smart Contract Agent has been started on port 8002.</p>
-        <p>Please check your Chainlit chat interface at <a href="http://127.0.0.1:8002">http://127.0.0.1:8002</a> for further instructions.</p>
-        <a href="/">Back to Home</a>
-      </body>
-    </html>
-    """
+    return smart_contract_page_style
 
 @app.get("/dispute", response_class=HTMLResponse)
 async def dispute():
     # Launch the dispute agent on port 8003.
     start_agent("dispute", "agents/text_reader_dispute_agent.py", "8003")
-    return """
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Dispute Agent Started</title>
-      </head>
-      <body>
-        <p>Dispute Agent has been started on port 8000.</p>
-        <p>Please check your Chainlit chat interface at <a href="http://127.0.0.1:8003">http://127.0.0.1:8003</a> for further instructions.</p>
-        <a href="/">Back to Home</a>
-      </body>
-    </html>
-    """
+    return dispute_page_style
 
 if __name__ == "__main__":
     import uvicorn
