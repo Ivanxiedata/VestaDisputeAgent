@@ -1,2 +1,6 @@
 .env
 idea/
+.DS_Store
+.chainlit
+__pycache__/
+css/__pycache__/

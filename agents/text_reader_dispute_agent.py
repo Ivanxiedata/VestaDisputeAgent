@@ -32,7 +32,7 @@ async def on_chat_start():
 
 
 @cl.on_message
-async def main(message: cl.Message):
+async def text_reader_main(message: cl.Message):
     # User's input is provided as a HumanMessage.
     human_input = HumanMessage(content=message.content)
 
